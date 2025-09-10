@@ -10,9 +10,20 @@ export interface Quote {
   targetCurrency: string | null;
 }
 
-interface Provider {
+export interface Provider {
   id: number;
   name: string;
   type: string;
   alias: string;
+  quotes: ProviderQuote[];
+}
+
+interface ProviderQuote {
+  deliveryEstimation: {
+    providerGivesEstimate: boolean;
+    duration: { min: string | null; max: string | null };
+  };
+  fee: number;
+  rate: number;
+  receivedAmount: number;
 }
