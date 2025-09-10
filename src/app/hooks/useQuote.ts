@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { Quote } from "../lib/types";
 
-export const useComparison = () => {
-  const [results, setResults] = useState<any>();
+export const useQuote = () => {
+  const [quote, setQuote] = useState<Quote | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -12,10 +13,10 @@ export const useComparison = () => {
         const res = await fetch(
           "https://api.wise.com/v4/comparisons/?sourceCurrency=GBP&targetCurrency=EUR&sendAmount=10000"
         );
-        const results = await res.json();
+        const quote: Quote = await res.json();
         setLoading(false);
-        setResults(results);
-        return results;
+        setQuote(quote);
+        return quote;
       } catch (e) {
         if (e instanceof Error) {
           setError(e.message);
@@ -25,5 +26,5 @@ export const useComparison = () => {
       }
     })();
   }, []);
-  return { loading, error, results };
+  return { loading, error, quote };
 };
