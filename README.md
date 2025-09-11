@@ -2,7 +2,13 @@
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the project's repo:
+
+```bash
+git clone https://github.com/Cat4848/money-transfer-comparison-widget
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -14,12 +20,18 @@ pnpm dev
 bun dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## What I wanted to do if I would had more time
+## Deployment
 
-- when selecting the `sourceCurrency` and `targetCurrency` make sure that these 2 fields do not have the same value. This will make it impossible to send a quote for the same currency;
-- create a reusable form component to server a input group; this component will encapsulate the `div` element with `className="input-group"`;
-- add a loading spinner for the loading state (at the moment I`m using the word _loading..._);
+The app is deployed on Vercel and you can access it on the following link: [Money Transfer Comparison App](https://money-transfer-comparison-widget.vercel.app/)
+
+## What I wanted to do if I would have more time
+
+- `sourceCurrency` and `targetCurrency` fields validation to have different values;
+- create a reusable form component to serve as an input group; this component will encapsulate the `div` element with `className="input-group"`;
+- add a loading spinner for the loading state (at the moment I'm using the word _loading..._);
 - some providers have multiple quotes; right now I'm rendering the first quote in the array of quotes; I'd love to filter them by fee in ascending order;
-- filtering on the grid table; filter the quotes by: fee, rate and received amount;
+- filtering on the grid table; filter the quotes by: fee, rate and received amount.
+
+### Enjoy 😊
