@@ -16,7 +16,6 @@ export default function SearchForm({ onSubmit }: Props) {
   const currencies = ["EUR", "GBP"];
   return (
     <div className="outer-form-content">
-      <h1>Get Money Transfer Quote</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="inner-form-content">
           <div className="input-group">
