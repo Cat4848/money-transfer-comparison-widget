@@ -13,7 +13,7 @@ export default function SearchForm({ onSubmit }: Props) {
     formState: { errors }
   } = useForm<SearchFormFields>();
 
-  const currencies = ["EUR", "GBP"];
+  const currencies = ["EUR", "GBP", "USD", "AUD", "JPY"];
   return (
     <div className="outer-form-content">
       <form onSubmit={handleSubmit(onSubmit)}>

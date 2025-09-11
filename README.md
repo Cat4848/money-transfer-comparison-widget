@@ -22,4 +22,4 @@ Then open [http://localhost:3000](http://localhost:3000) with your browser to se
 - create a reusable form component to server a input group; this component will encapsulate the `div` element with `className="input-group"`;
 - add a loading spinner for the loading state (at the moment I`m using the word _loading..._);
 - some providers have multiple quotes; right now I'm rendering the first quote in the array of quotes; I'd love to filter them by fee in ascending order;
-- filtering on the grid table; filter the quotes by: fee, rate and received amount.
+- filtering on the grid table; filter the quotes by: fee, rate and received amount;
