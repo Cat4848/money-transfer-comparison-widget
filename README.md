@@ -28,7 +28,7 @@ The app is deployed on Vercel and you can access it on the following link: [Mone
 
 ## What I wanted to do if I would have more time
 
-- `sourceCurrency` and `targetCurrency` fields validation to have different values;
+- `sourceCurrency` and `targetCurrency` fields validation to enforce different values;
 - create a reusable form component to serve as an input group; this component will encapsulate the `div` element with `className="input-group"`;
 - add a loading spinner for the loading state (at the moment I'm using the word _loading..._);
 - some providers have multiple quotes; right now I'm rendering the first quote in the array of quotes; I'd love to filter them by fee in ascending order;
