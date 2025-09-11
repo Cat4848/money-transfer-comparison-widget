@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Quote } from "../lib/types";
 
-export const useQuote = () => {
+const baseUrl = "https://api.wise.com/v4/comparisons/";
+
+export const useQuote = (searchString: string) => {
   const [quote, setQuote] = useState<Quote | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -10,9 +12,7 @@ export const useQuote = () => {
     (async () => {
       try {
         setLoading(true);
-        const res = await fetch(
-          "https://api.wise.com/v4/comparisons/?sourceCurrency=GBP&targetCurrency=EUR&sendAmount=10000"
-        );
+        const res = await fetch(`${baseUrl}${searchString}`);
         const quote: Quote = await res.json();
         setLoading(false);
         setQuote(quote);
@@ -25,6 +25,6 @@ export const useQuote = () => {
         }
       }
     })();
-  }, []);
+  }, [searchString]);
   return { loading, error, quote };
 };
