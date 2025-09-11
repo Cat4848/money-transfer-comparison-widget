@@ -1,7 +1,6 @@
 "use client";
-import styles from "./page.module.css";
 import SearchForm from "./components/SearchForm";
-import Quote from "./components/Quote";
+import Quote from "./components/Quote/Quote";
 import { useState } from "react";
 import { SearchFormFields } from "./lib/types";
 

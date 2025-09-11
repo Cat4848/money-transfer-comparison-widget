@@ -1,0 +1,13 @@
+.box {
+  display: grid;
+  grid-template-columns: var(--quote-grid-template-columns);
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  font-size: large;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
