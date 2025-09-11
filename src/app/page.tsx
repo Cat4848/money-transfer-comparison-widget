@@ -2,6 +2,7 @@
 import styles from "./page.module.css";
 import { useQuote } from "./hooks/useQuote";
 import Option from "./components/Option";
+import SearchForm from "./components/SearchForm";
 
 export default function Home() {
   const { loading, error, quote } = useQuote();
@@ -16,6 +17,8 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <h1>Money Transfer Comparison</h1>
+
+      <SearchForm />
 
       {quote &&
         quote.providers.map((provider) => (

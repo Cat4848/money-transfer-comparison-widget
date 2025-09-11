@@ -27,3 +27,9 @@ interface ProviderQuote {
   rate: number;
   receivedAmount: number;
 }
+
+export interface SearchFormFields {
+  sourceCurrency: string;
+  targetCurrency: string;
+  amount: number;
+}
