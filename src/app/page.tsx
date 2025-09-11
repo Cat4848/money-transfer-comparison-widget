@@ -2,14 +2,31 @@
 import styles from "./page.module.css";
 import SearchForm from "./components/SearchForm";
 import Quote from "./components/Quote";
+import { useState } from "react";
+import { SearchFormFields } from "./lib/types";
 
 export default function Home() {
+  const [didFirstSearch, setDidFirstSearch] = useState(false);
+  const [searchString, setSearchString] = useState<string | null>(null);
+
+  const handleSubmit = ({
+    sourceCurrency,
+    targetCurrency,
+    amount
+  }: SearchFormFields) => {
+    if (!didFirstSearch) {
+      setDidFirstSearch(true);
+    }
+    const searchString = `?sourceCurrency=${sourceCurrency}&targetCurrency=${targetCurrency}&sendAmount=${amount}`;
+    setSearchString(searchString);
+  };
+
   return (
     <div>
       <h1>Money Transfer Comparison</h1>
 
-      <SearchForm />
-      <Quote searchString="?sourceCurrency=GBP&targetCurrency=EUR&sendAmount=10000" />
+      <SearchForm onSubmit={handleSubmit} />
+      {didFirstSearch && searchString && <Quote searchString={searchString} />}
     </div>
   );
 }

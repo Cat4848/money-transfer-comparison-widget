@@ -2,16 +2,16 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { SearchFormFields } from "../lib/types";
 import MandatoryField from "./MandatoryField";
 
-export default function SearchForm() {
+interface Props {
+  onSubmit: (fields: SearchFormFields) => void;
+}
+
+export default function SearchForm({ onSubmit }: Props) {
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm<SearchFormFields>();
-
-  const onSubmit: SubmitHandler<SearchFormFields> = (data) => {
-    console.log("submitted -> data", data);
-  };
 
   const currencies = ["EUR", "GBP"];
   return (
